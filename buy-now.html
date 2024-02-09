@@ -1,1 +1,82 @@
 <!-- Similar structure with appropriate headings and content, along with navigation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy MET Coin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="buy-now.html">Buy Now</a></li>
+      <li><a href="get-started.html">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Buy MET Coin</h1>
+      <p>Enter the quantity of coins you want to buy.</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section>
+        <h2>Buy MET Coin</h2>
+        <form id="buyNowForm">
+          <div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+          </div>
+          <div>
+            <label for="totalPrice">Total Price (USD):</label>
+            <input type="text" id="totalPrice" name="totalPrice" readonly>
+          </div>
+          <button type="submit">Calculate Total</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 MET Coin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script for Calculating Total Price -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buyNowForm = document.getElementById('buyNowForm');
+      const quantityInput = document.getElementById('quantity');
+      const totalPriceInput = document.getElementById('totalPrice');
+
+      buyNowForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get quantity entered by the user
+        const quantity = parseInt(quantityInput.value);
+
+        // Calculate total price based on the starting price of $0.01 USD per coin
+        const startingPricePerCoin = 0.01;
+        const totalPrice = (quantity * startingPricePerCoin).toFixed(2);
+
+        // Update total price input field
+        totalPriceInput.value = `$${totalPrice}`;
+      });
+    });
+  </script>
+
+</body>
+</html>
