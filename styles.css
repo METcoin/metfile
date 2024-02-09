@@ -6,16 +6,17 @@ body, h1, h2, h3, p, ul, li {
 
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   margin: auto;
   overflow: hidden;
   padding: 20px;
@@ -41,12 +42,17 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ddd;
 }
 
 /* Header Styles */
 header {
-  background: #333;
+  background: linear-gradient(to bottom, #333 0%, #222 100%);
   color: #fff;
   padding-top: 80px;
   text-align: center;
@@ -59,6 +65,7 @@ header h1 {
 
 header p {
   font-size: 1.2em;
+  color: #ccc;
 }
 
 /* Main Content Styles */
@@ -71,21 +78,23 @@ section {
 }
 
 section h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
+  color: #333;
 }
 
 section p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.6;
+  color: #666;
 }
 
 /* Button Styles */
 a.buy-button,
 a.get-started-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
+  padding: 12px 24px;
+  background-color: #007bff;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -94,7 +103,7 @@ a.get-started-button {
 
 a.buy-button:hover,
 a.get-started-button:hover {
-  background-color: #555;
+  background-color: #0056b3;
 }
 
 /* Footer Styles */
@@ -103,7 +112,12 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 }
+
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
